@@ -5,21 +5,21 @@
 class Glasskube < Formula
   desc "Glasskube is a cloud native package manager for Kubernetes. It includes an UI and CLI, is dependency aware and GitOps ready."
   homepage "https://glasskube.dev"
-  version "0.0.1-alpha.6"
+  version "0.0.1-alpha.7"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1-alpha.6_darwin_arm64.tar.gz"
-      sha256 "029884cc4ca5fb69d2e0396251a7b6f484efa1c99b2568504823bfc0a07b55b0"
+    if Hardware::CPU.intel?
+      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1-alpha.7_darwin_x86_64.tar.gz"
+      sha256 "7990d11b006cd5ba15ac995f56bb50b08bab050e550b2e281a0396c9cf0279e2"
 
       def install
         bin.install "glasskube"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1-alpha.6_darwin_x86_64.tar.gz"
-      sha256 "12ec00bde5d5f5efa0ef98788cfc2ccaf8d15905c920e9a447031103e7f5aef4"
+    if Hardware::CPU.arm?
+      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1-alpha.7_darwin_arm64.tar.gz"
+      sha256 "c44af2271ca3038789cc5c778621464328f56965e9d83f5264f38486642e237c"
 
       def install
         bin.install "glasskube"
@@ -29,16 +29,16 @@ class Glasskube < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1-alpha.6_linux_arm64.tar.gz"
-      sha256 "dae43f50bd9613e6e19a0cb0333502cd7dc34640ae402d91c37e3a4ca05d3cdb"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1-alpha.7_linux_arm64.tar.gz"
+      sha256 "261b161bc52474603a14705bb7c602d02640cf8a9abef83ded5814aef46b19f8"
 
       def install
         bin.install "glasskube"
       end
     end
     if Hardware::CPU.intel?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1-alpha.6_linux_x86_64.tar.gz"
-      sha256 "159d520fafc544d18f8d6da3baa7137ec44fc563fb13681683c2edcfb681bef6"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1-alpha.7_linux_x86_64.tar.gz"
+      sha256 "25382739e83e927ca1a257717d62a581601c3f64b42085c71222006dce2908c2"
 
       def install
         bin.install "glasskube"
