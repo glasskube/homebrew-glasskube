@@ -5,21 +5,21 @@
 class Glasskube < Formula
   desc "Glasskube is a cloud native package manager for Kubernetes. It includes an UI and CLI, is dependency aware and GitOps ready."
   homepage "https://glasskube.dev"
-  version "0.0.1-alpha.10"
+  version "0.0.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1-alpha.10_darwin_arm64.tar.gz"
-      sha256 "44b8df676ecfe0b8fd5c46cb1edc2c92764d32c64e71d52c8e265df09409513e"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1_darwin_arm64.tar.gz"
+      sha256 "3d8495405c56466e885b9a5a3d51fddade3053434f946ddf01a79c0ed0170961"
 
       def install
         bin.install "glasskube"
       end
     end
     if Hardware::CPU.intel?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1-alpha.10_darwin_x86_64.tar.gz"
-      sha256 "a1c52ecf577578ae67f545739314dabe7be741de8292fcbc10d01111ce7f01db"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1_darwin_x86_64.tar.gz"
+      sha256 "22b63e13cbb91f98a998b56cbad2d98cc31ccab1b28a54fd491535976c132bbb"
 
       def install
         bin.install "glasskube"
@@ -28,17 +28,17 @@ class Glasskube < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1-alpha.10_linux_x86_64.tar.gz"
-      sha256 "60f6db400616ab68f880df61008a755ed53a75b75a4b7acf192fa1e17c53cf34"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1_linux_arm64.tar.gz"
+      sha256 "4be73223a6dea6014fa18804f253de7cda83801ab99021a43184a0dfd96ce018"
 
       def install
         bin.install "glasskube"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1-alpha.10_linux_arm64.tar.gz"
-      sha256 "4efe3bd93acd50a9f792c998b11b25fdabe8042af7411c0d58429158153e11b7"
+    if Hardware::CPU.intel?
+      url "https://releases.dl.glasskube.dev/glasskube_v0.0.1_linux_x86_64.tar.gz"
+      sha256 "4dd3791d8af7745b2b16c20b5055045fcd85fb66e5fcbc84029d19433f515875"
 
       def install
         bin.install "glasskube"
