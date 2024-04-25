@@ -5,21 +5,21 @@
 class Glasskube < Formula
   desc "Glasskube is a cloud native package manager for Kubernetes. It includes an UI and CLI, is dependency aware and GitOps ready."
   homepage "https://glasskube.dev"
-  version "0.2.1"
+  version "0.3.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.2.1_darwin_x86_64.tar.gz"
-      sha256 "fcf6f1445f0243a7b841a6999d601054eb5deaff4f1048591022351f8edc254c"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.3.0_darwin_x86_64.tar.gz"
+      sha256 "14495f9bd9417426ca5a37a8f065a293009302fbfe2b621f733ee19638246994"
 
       def install
         bin.install "glasskube"
       end
     end
     if Hardware::CPU.arm?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.2.1_darwin_arm64.tar.gz"
-      sha256 "a85291fbc667cdfe35aa53b88417a6f51c76f826c5f6271a96a3f10a6892b524"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.3.0_darwin_arm64.tar.gz"
+      sha256 "cbeb8e095015aad023067336b26dc9463283328248e97504d07495b2dcd08e51"
 
       def install
         bin.install "glasskube"
@@ -29,16 +29,16 @@ class Glasskube < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.2.1_linux_x86_64.tar.gz"
-      sha256 "f2d98c0d4a9d032bc86d7fca454b95055980a5dae42cffd669d3aef11469c15d"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.3.0_linux_x86_64.tar.gz"
+      sha256 "155689d3463f9120935babefcac65a90833f7775c8389ed8b00e9c2b08524eaa"
 
       def install
         bin.install "glasskube"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.2.1_linux_arm64.tar.gz"
-      sha256 "f6623c69dba7988885dec6288bc40b3206acf4ae9e3ede876c2770e851f03099"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.3.0_linux_arm64.tar.gz"
+      sha256 "a282e403160c6b18dff296391d53f0bb22323572a0b013d3bdd2c5e854202879"
 
       def install
         bin.install "glasskube"
