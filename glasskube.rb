@@ -5,21 +5,21 @@
 class Glasskube < Formula
   desc "Glasskube is a cloud native package manager for Kubernetes. It includes an UI and CLI, is dependency aware and GitOps ready."
   homepage "https://glasskube.dev"
-  version "0.4.0"
+  version "0.4.1"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.4.0_darwin_x86_64.tar.gz"
-      sha256 "595b0670dc54f647e9085deafe464007a17b92fa48134ec24714e8912c0ceac7"
+    on_intel do
+      url "https://releases.dl.glasskube.dev/glasskube_v0.4.1_darwin_x86_64.tar.gz"
+      sha256 "d059cfc5eab8f5b5f9bf6ddb18de263608fdacc4ad198523502589f5b164db8a"
 
       def install
         bin.install "glasskube"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.4.0_darwin_arm64.tar.gz"
-      sha256 "9fad85cbe5ec2cc888d2487bef8c5a7d40e2cbaea71d772061561ca5a071f645"
+    on_arm do
+      url "https://releases.dl.glasskube.dev/glasskube_v0.4.1_darwin_arm64.tar.gz"
+      sha256 "6212d71cb5129e5832afb44f8ed3a8703d01f164fc3ef7e2356d700fde6eb774"
 
       def install
         bin.install "glasskube"
@@ -28,20 +28,24 @@ class Glasskube < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.4.0_linux_x86_64.tar.gz"
-      sha256 "4ef696cc39b51ded40878d8aefa31c72ac449a21ac3ebe4d7d4ec546c9258864"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://releases.dl.glasskube.dev/glasskube_v0.4.1_linux_x86_64.tar.gz"
+        sha256 "3560691f8d5d5193b14fe35bb45bd5f620dc8db14f846ea4fd8ee6212a599cec"
 
-      def install
-        bin.install "glasskube"
+        def install
+          bin.install "glasskube"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://releases.dl.glasskube.dev/glasskube_v0.4.0_linux_arm64.tar.gz"
-      sha256 "e4e8fafdb931416c196d01ebce120affd38a0905e58345af4115cbbf9212fcbb"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://releases.dl.glasskube.dev/glasskube_v0.4.1_linux_arm64.tar.gz"
+        sha256 "2004e14b0105ed84c130206bdf0c311bcbdfe7a01086a8e8b1974602f32be421"
 
-      def install
-        bin.install "glasskube"
+        def install
+          bin.install "glasskube"
+        end
       end
     end
   end
