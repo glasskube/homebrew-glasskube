@@ -5,21 +5,21 @@
 class Glasskube < Formula
   desc "Glasskube is a cloud native package manager for Kubernetes. It includes an UI and CLI, is dependency aware and GitOps ready."
   homepage "https://glasskube.dev"
-  version "0.5.1"
+  version "0.6.0"
   license "Apache-2.0"
 
   on_macos do
     on_intel do
-      url "https://releases.dl.glasskube.dev/glasskube_v0.5.1_darwin_x86_64.tar.gz"
-      sha256 "2b08dfb35a0b94fd48205c3044ae4cf86ad9ed1af1e5774851f90308f309bd28"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.6.0_darwin_x86_64.tar.gz"
+      sha256 "72ea3aaefb0699f1a7704c309a899aace30b6ec360c19aca7fe371383c6fd13d"
 
       def install
         bin.install "glasskube"
       end
     end
     on_arm do
-      url "https://releases.dl.glasskube.dev/glasskube_v0.5.1_darwin_arm64.tar.gz"
-      sha256 "b5cd4fbb1af0aa06f36adb91b36c879b216938562bcc4c6bc870986d4a79e6e7"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.6.0_darwin_arm64.tar.gz"
+      sha256 "a6c617a19b4d488488a8a7795125564d595e871bc77214a757107cb7d95f3d93"
 
       def install
         bin.install "glasskube"
@@ -30,8 +30,8 @@ class Glasskube < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://releases.dl.glasskube.dev/glasskube_v0.5.1_linux_x86_64.tar.gz"
-        sha256 "8c585b6f78a908d3098d28195ad2e200b7ddab0c60055df635cd14654a90f2c9"
+        url "https://releases.dl.glasskube.dev/glasskube_v0.6.0_linux_x86_64.tar.gz"
+        sha256 "7863188ec2375b94523ac52788bb3b68830dc998794cb305557c07e5618de7e9"
 
         def install
           bin.install "glasskube"
@@ -40,8 +40,8 @@ class Glasskube < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://releases.dl.glasskube.dev/glasskube_v0.5.1_linux_arm64.tar.gz"
-        sha256 "da8f1eb5f07e1333242b0f4a8f7dab902351cb5df54a5c2589da1f0b04f6d9dd"
+        url "https://releases.dl.glasskube.dev/glasskube_v0.6.0_linux_arm64.tar.gz"
+        sha256 "4e4fb7c423503dd90a503b0ee094f24588ea9dd464d8d0cdccafc850ca2ffb14"
 
         def install
           bin.install "glasskube"
