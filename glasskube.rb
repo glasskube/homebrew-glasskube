@@ -5,24 +5,30 @@
 class Glasskube < Formula
   desc "Glasskube is a cloud native package manager for Kubernetes. It includes an UI and CLI, is dependency aware and GitOps ready."
   homepage "https://glasskube.dev"
-  version "0.19.0"
+  version "0.19.1"
   license "Apache-2.0"
 
   on_macos do
     on_intel do
-      url "https://releases.dl.glasskube.dev/glasskube_v0.19.0_darwin_x86_64.tar.gz"
-      sha256 "7d84393363bd8b1c09ef560011d0be4472db927f2283968c13c2dee0a5d429bc"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.19.1_darwin_x86_64.tar.gz"
+      sha256 "d67f7768ac5c53eb0e707cb2a116d2ecbb61e40e83f0b242e268064376693d1c"
 
       def install
         bin.install "glasskube"
+        bash_completion.install "completions/glasskube.bash" => "glasskube"
+        zsh_completion.install "completions/glasskube.zsh" => "_glasskube"
+        fish_completion.install "completions/glasskube.fish"
       end
     end
     on_arm do
-      url "https://releases.dl.glasskube.dev/glasskube_v0.19.0_darwin_arm64.tar.gz"
-      sha256 "9eb0a62d7473e9976d27223e3cfb20f4a644eae86daac0cc9254c4e83258afe2"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.19.1_darwin_arm64.tar.gz"
+      sha256 "c4205c8405dc0cb7db27132258ffa8e030060aa86016b97a45743d29c539a3d6"
 
       def install
         bin.install "glasskube"
+        bash_completion.install "completions/glasskube.bash" => "glasskube"
+        zsh_completion.install "completions/glasskube.zsh" => "_glasskube"
+        fish_completion.install "completions/glasskube.fish"
       end
     end
   end
@@ -30,21 +36,27 @@ class Glasskube < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://releases.dl.glasskube.dev/glasskube_v0.19.0_linux_x86_64.tar.gz"
-        sha256 "52114bb97e4824b839d393f6c71a40ccaef8212ccf41dbe8982d206aea788f57"
+        url "https://releases.dl.glasskube.dev/glasskube_v0.19.1_linux_x86_64.tar.gz"
+        sha256 "d9f42e10dbe6ee6f2d2f0e4a1f73b273ffd576d47b0630dc250b520ce0f29ccf"
 
         def install
           bin.install "glasskube"
+          bash_completion.install "completions/glasskube.bash" => "glasskube"
+          zsh_completion.install "completions/glasskube.zsh" => "_glasskube"
+          fish_completion.install "completions/glasskube.fish"
         end
       end
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://releases.dl.glasskube.dev/glasskube_v0.19.0_linux_arm64.tar.gz"
-        sha256 "b560f5bbf5e303aaa6e224d3dc1a1f430225bc6ad0f830c1ff5421be4ba0f679"
+        url "https://releases.dl.glasskube.dev/glasskube_v0.19.1_linux_arm64.tar.gz"
+        sha256 "8cd889c86d8bbf8f50de1adf98f2ee44bac4809593f559e8d88fe2973dada326"
 
         def install
           bin.install "glasskube"
+          bash_completion.install "completions/glasskube.bash" => "glasskube"
+          zsh_completion.install "completions/glasskube.zsh" => "_glasskube"
+          fish_completion.install "completions/glasskube.fish"
         end
       end
     end
