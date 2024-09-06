@@ -5,21 +5,21 @@
 class Glasskube < Formula
   desc "Glasskube is a cloud native package manager for Kubernetes. It includes an UI and CLI, is dependency aware and GitOps ready."
   homepage "https://glasskube.dev"
-  version "0.20.0"
+  version "0.20.1"
   license "Apache-2.0"
 
   on_macos do
     on_intel do
-      url "https://releases.dl.glasskube.dev/glasskube_v0.20.0_darwin_x86_64.tar.gz"
-      sha256 "ccacddd15314416134c8ea2b72f25fb69dfe992bcf73a0a51c2052e257168462"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.20.1_darwin_x86_64.tar.gz"
+      sha256 "1bedde000db26b0c02270080d417381c9163350c099a334f550d02d8aa065aa9"
 
       def install
         bin.install "glasskube"
       end
     end
     on_arm do
-      url "https://releases.dl.glasskube.dev/glasskube_v0.20.0_darwin_arm64.tar.gz"
-      sha256 "f8e1743ff427b83c90003c349f339a09814381cab7bd0fe570eaa7db0fe35005"
+      url "https://releases.dl.glasskube.dev/glasskube_v0.20.1_darwin_arm64.tar.gz"
+      sha256 "31fa88681bbe5b596c3e9a37ba778781e3c59de933c1d1d75e4f16c9ffc9df93"
 
       def install
         bin.install "glasskube"
@@ -30,8 +30,8 @@ class Glasskube < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://releases.dl.glasskube.dev/glasskube_v0.20.0_linux_x86_64.tar.gz"
-        sha256 "9f490d8e11dde892237ecd87e2d7e8967ac55547cfcb6caf5271975366780ea6"
+        url "https://releases.dl.glasskube.dev/glasskube_v0.20.1_linux_x86_64.tar.gz"
+        sha256 "183890c50112ec85698061bb55e98006c210950373174bff7967e442fa467ea2"
 
         def install
           bin.install "glasskube"
@@ -40,8 +40,8 @@ class Glasskube < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://releases.dl.glasskube.dev/glasskube_v0.20.0_linux_arm64.tar.gz"
-        sha256 "93657859095677e5fbe8306fad4adc47f0188d29e0f75fb7010cb3acc1cb424d"
+        url "https://releases.dl.glasskube.dev/glasskube_v0.20.1_linux_arm64.tar.gz"
+        sha256 "00171d33d98b8b2036f9aa87fe6c1ca5d85c97e3cc052d4d8e263046ac137112"
 
         def install
           bin.install "glasskube"
@@ -51,6 +51,6 @@ class Glasskube < Formula
   end
 
   def post_install
-    generate_completions_from_executable(bin/"glasskube", "completions")
+    generate_completions_from_executable(bin/"glasskube", "completion")
   end
 end
